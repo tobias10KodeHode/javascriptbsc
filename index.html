@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jsfunctions.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="text">HELLO</p>
+
+<h2 class="unit-converter_header">Units converter</h2>
+<section class="unit-converter">
+<input type="number" placeholder="0" title="add a whole number!" id="input">
+<select id="units-dropdown">
+<option value="lbs2kg">Convert from lbs to kg</option>
+<option value="kg2lbs">Convert from kg to lbs</option>
+<option value="inch2cm">Convert from inches to cm</option>
+<option value="cm2inch">Convert from cm to inches</option>
+<option value="mile2km">Convert from miles to km</option>
+<option value="km2mile">Convert from km to miles</option>
+
+
+</select>
+<button onclick="convertUnit()">Convert units!</button>
+<p class="result" id="result_txt"></p>
+
+</section>
+</body>
+</html>
