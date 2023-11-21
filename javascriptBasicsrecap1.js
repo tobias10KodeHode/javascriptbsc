@@ -54,10 +54,36 @@ console.log(number4)
 
 //! Write code here
 
+function getRandomString() {
+    var randomNumber = Math.random();
+  
+    if (randomNumber < 0.5) {
+      return "This is the first random string";
+    } else {
+      return "This is the second random string";
+    }
+  }
+  
+  var randomString = getRandomString();
+  console.log(randomString);
+
 //* Assignment 5:
 /* Make a function that uses a parameter to check if a number is odd or even */
 
 //! Write code here
+function checkOddOrEven(number) {
+    if (number % 2 === 0) {
+      return "Even";
+    } else {
+      return "Odd";
+    }
+  }
+  
+  var resultat = checkOddOrEven(7);
+  console.log(resultat);
+  
+  resultat = checkOddOrEven(10);
+  console.log(resultat);
 
 //* Assigment 6:
 /* Make a variable called userTitle and set the content equal to "Mr." if userMale is true,
@@ -69,6 +95,10 @@ Try changing userMale to both true and false and console.log your new variable,
 to see that your conditional is working. */
 
 //! Write code here
+const userMale = true;
+const userTitle = userMale ? "Mr." : "Mrs.";
+
+console.log(userTitle);
 
 //* Assigment 8:
 /*
@@ -91,7 +121,26 @@ Example console.log(yourFunction("Gunnar", 19)) should console log Good evening 
 Console log the function a few times to show that it's working. */
 
 //! Write code here
+function greetByHour(name, hour) {
+  if (hour >= 0 && hour < 6) {
+      return `Good night ${name}`;
+  } else if (hour >= 6 && hour < 12) {
+      return `Good morning ${name}`;
+  } else if (hour >= 12 && hour < 18) {
+      return `Good day ${name}`;
+  } else if (hour >= 18 && hour <= 24) {
+      return `Good evening ${name}`;
+  } else {
+      return "Invalid time";
+  }
+}
 
+// Testing av forskjellige inputs
+console.log(greetByHour("Gunnar", 19)); // Good evening Gunnar
+console.log(greetByHour("Alice", 8));    // Good morning Alice
+console.log(greetByHour("Bob", 15));      // Good day Bob
+console.log(greetByHour("Charlie", 3));   // Good night Charlie
+console.log(greetByHour("David", 25));    // Invalid time
 
 //* Assignment 9:
 /* Write a function that takes in 2 numbers as parameters.
@@ -104,13 +153,45 @@ Use arrow function syntax.
 Example: your function receives 13 and 24, it should return the sum of 24/13 */
 
 //! Write code here
+const calculateSumDividedBySmaller = (number1, number2) => {
+  const largerNumber = Math.max(number1, number2);
+  const smallerNumber = Math.min(number1, number2);
 
+  return largerNumber / smallerNumber;
+};
+
+console.log(calculateSumDividedBySmaller(13, 24));
+console.log(calculateSumDividedBySmaller(5, 10));
+console.log(calculateSumDividedBySmaller(8, 8));
 
 //* Assignment 10:
 /* Make a function that uses Switch/Case or if/else,
 Random Number Generator, Methods, and Arrays with Objects */
 
 //! Write code here
+
+function performRandomOperation() {
+
+  const number1 = Math.floor(Math.random() * 10) + 1;
+  const number2 = Math.floor(Math.random() * 10) + 1;
+
+
+  const operations = [
+      { operator: '+', operation: (a, b) => a + b },
+      { operator: '-', operation: (a, b) => a - b },
+      { operator: '*', operation: (a, b) => a * b },
+      { operator: '/', operation: (a, b) => (b !== 0 ? a / b : 'Cannot divide by zero') }
+  ];
+
+  const selectedOperation = operations[Math.floor(Math.random() * operations.length)];
+
+  const result = selectedOperation.operation(number1, number2);
+
+  console.log(`${number1} ${selectedOperation.operator} ${number2} = ${result}`);
+}
+
+performRandomOperation();
+
 
 //* BAONUS assignment:
 /*
