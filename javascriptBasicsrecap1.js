@@ -53,6 +53,16 @@ console.log(number4)
 /* Make an if else statement that returns a random string */
 
 //! Write code here
+function getRandomString() {
+    const randomNum = Math.random();
+    if (randomNum < 0.5) {
+      return "Hello World!";
+    } else {
+      return "Goodbye World!";
+  }
+  }
+  
+  console.log(getRandomString());
 
 function getRandomString() {
     var randomNumber = Math.random();
@@ -71,19 +81,6 @@ function getRandomString() {
 /* Make a function that uses a parameter to check if a number is odd or even */
 
 //! Write code here
-function checkOddOrEven(number) {
-    if (number % 2 === 0) {
-      return "Even";
-    } else {
-      return "Odd";
-    }
-  }
-  
-  var resultat = checkOddOrEven(7);
-  console.log(resultat);
-  
-  resultat = checkOddOrEven(10);
-  console.log(resultat);
 
 //* Assigment 6:
 /* Make a variable called userTitle and set the content equal to "Mr." if userMale is true,
